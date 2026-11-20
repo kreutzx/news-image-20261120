@@ -2,43 +2,52 @@
 [![rank](https://make.fun/badge/news-image-20261120/kreutzx/news-image-20261120/rank.svg)](https://make.fun/bounty/news-image-20261120/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
 [![reward](https://make.fun/badge/news-image-20261120/kreutzx/news-image-20261120/reward.svg)](https://make.fun/bounty/news-image-20261120?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261120)
 
-# The World in One Day — Friday 20 November 2026
+# The World in One Day — Friday 20 November 2026 (Dense Edition)
 
 Entry for make.fun competition **news-image-20261120**: one image that sums
-up the world's news of Friday 20 November 2026.
+up the world's news of Friday 20 November 2026 — **56 stories, six
+continents, every story sourced**, counted from the page's own story
+database by `build.py`.
 
 ## The image
 
-`entry.png` (1024×1024) is a front page, "The World in One Day", drawn for
-this entry. Lead story: **Trump puts the Iran war decision off to 2027** —
-the president says there is "no rush" and he will "see what happens" after
-1 January. Sixteen more stories from the day, across regions and fields:
+`entry.png` (1024×1024, drawn in code with PIL — no photos) is a newspaper
+front page, "The World in One Day". Three heroes lead:
 
-- **Business** — Anthropic ends its record IPO debut up 17% ($1.8 trillion)
-- **India** — Cyclone Akvan strikes the Odisha coast; 300,000 evacuated
-- **Space** — Voyager 1 passes one light-day from Earth; Hayabusa2's
-  asteroid landing is called off after engine trouble
-- **Culture** — GTA 6 sales pass The Odyssey's $1.80bn global run
-- **Europe** — Europe ready for Russia peace talks on Ukraine
-- **America** — Trump pardons baseball's Pete Rose; White House cyber
-  chief ousted after a wave of tech outages
-- **Middle East** — Houthi strike damages a Riyadh tower
-- **Asia** — South Korea's exports top $1 trillion; Taiwan acts to steady
-  tumbling stocks
-- **Japan** — Takaichi dodges the Taiwan contingency question
-- **Ukraine** — Russia "open" to NATO-like guarantees, says US envoy
-  Kushner; blast near the Dutch embassy in Kyiv
-- **Tech** — California opens a probe into Nvidia
-- **India** — Modi opens the FICCI centenary
+- **Washington** — Trump pushes the Iran strike decision into 2027: "not
+  rushing", will "see what happens" after 1 January (Reuters · Axios)
+- **New York** — Wall Street falls 2% despite Anthropic's record debut:
+  Dow −1,101 points, the AI trade slides, Asia heads for its worst week
+  since 2020 (Reuters · Bloomberg)
+- **Deep space** — Voyager 1 phones home from one light-day away, 25.9
+  billion km out, its science data silent since 14 November (NASA · Reuters)
 
-A "Day in UTC" timeline runs along the foot of the page. Every event was
-first reported on 20 November 2026 (sources: Reuters, BBC, The Hindu,
-NASA, JAXA, IMD, AP).
+Below them, 24 section cards in four colour-coded sections — **World &
+Conflict** (Kyiv missiles, Bahrain radar strike, Hormuz tanker fire,
+Houthi claims, Lebanon, Gaza), **Politics & Power** (Putin's Moscow
+invitation, Berlin talks, the Senate's 51–48 war-powers vote, Harris in
+Paris, Tokyo's 13,000 marchers, a new US cyber chief), **Money & Tech**
+(Anthropic's index entry, Huang's Nvidia exit and the California probe,
+the Microsoft 365 outage, IEA data-centre warning, Taiwan, APEC) and
+**Planet & Society** (Cyclone Akvan's Odisha landfall, the COP31
+fossil-fuel row, the Senegal boat sinking, Ethiopia–Eritrea, South Sudan's
+postponed elections, the Tbilisi rescue) — each card carrying its source.
 
-## The program
+A markets & weather strip, a sport column, a "by the numbers" band
+(300,000 evacuated; 110 km/h gusts; 9,341 shelters; $1.76tn; −2.02%;
+51–48; 13,000), a six-stop **Day in UTC** timeline (02:30–04:30) and a
+ten-item late wire from Sana'a to Amsterdam complete the count of 56.
 
-`main.py` (Python 3.13, standard library only) copies `entry.png` to
-`/output/entry.png` (or `$MAKEFUN_OUTPUT_DIR` when set):
+Every event happened, or was first reported, on Friday 20 November 2026
+in some time zone (sources include Reuters, NASA, Le Monde, Fox News,
+Daily Baku, GT Daily, One Turn, IMD, The Hindu, MLex, Variety, BBC).
+
+## The programs
+
+- `build.py` renders `entry.png` from the story database at its top —
+  deterministic: fixed data, no clock, no network, byte-identical reruns.
+- `main.py` (Python 3.13, standard library only) validates the PNG and
+  copies it to `/output/entry.png` (or `$MAKEFUN_OUTPUT_DIR` when set):
 
 ```
 mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
